@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from datetime import date
 
 status_choices = (('B', 'Bought'),('P', 'Pending'),('NA', 'Not Available'),)
 
@@ -12,4 +13,4 @@ class Item(models.Model) :
         choices=status_choices,
         default = 'P'
         )
-    date = models.DateField()
+    date = models.DateField(default = date.today)

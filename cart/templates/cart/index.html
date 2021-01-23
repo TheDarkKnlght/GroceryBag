@@ -30,15 +30,18 @@
                 <!--- -->
                 <!-- Loop This -->
                 <div class="col-lg-4">
+                    {% for item in items %}
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Tomato</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">2 Pcs.</h6>
-                          <p class="text-success">BOUGHT</p>
+                          <h5 class="card-title">{{ item.name }}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{ item.quantity }}</h6>
+                          <p class="text-success">{{ item.status }}</p>
                         </div>
                       </div>
+                      <br>
+                      {% endfor %}
                 </div>
-                <!-- // Loop -->
+                <!-- // Loop
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
@@ -57,7 +60,7 @@
                           <p class="text-info">PENDING</p>
                         </div>
                       </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
