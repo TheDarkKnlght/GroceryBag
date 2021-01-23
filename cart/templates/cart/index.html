@@ -29,8 +29,8 @@
             <div class="row mt-4">
                 <!--- -->
                 <!-- Loop This -->
+                {% for item in items %}
                 <div class="col-lg-4">
-                    {% for item in items %}
                     <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">{{ item.name }}</h5>
@@ -39,8 +39,8 @@
                         </div>
                       </div>
                       <br>
-                      {% endfor %}
                 </div>
+                {% endfor %}
                 <!-- // Loop
                 <div class="col-lg-4">
                     <div class="card">
