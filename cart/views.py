@@ -18,7 +18,7 @@ def register_request(request):
 	return render (request, 'main/register.html', {"register_form" : form})
 
 def grocery_list(request) :
-    items = Item.objects.all()
+    items = Item.objects.all().order_by('date')
     return render(request, 'cart/index.html', {'items': items})
 
 def home(request) :
@@ -29,7 +29,7 @@ def add_entry(request) :
         form = ItemForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('cart')
     else :
         form = ItemForm()
         return render(request, 'cart/add.html', {'form': form})
@@ -37,7 +37,7 @@ def add_entry(request) :
 def remove(request, id) : 
     item = Item.objects.get(id=id) 
     item.delete() 
-    return redirect('home') 
+    return redirect('cart') 
 
 def update(request, id) :
     # item = Item.objects.get(id=id)
