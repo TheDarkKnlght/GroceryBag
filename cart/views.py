@@ -23,3 +23,7 @@ def remove(request, id) :
     item = Item.objects.get(id=id) 
     item.delete() 
     return redirect('home') 
+
+def update(request, id) :
+    item = Item.objects.get(id=id)
+    
