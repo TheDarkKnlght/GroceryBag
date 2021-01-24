@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View List</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <!-- top -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Grocery Bag</h1>
+                </div>
+                <a href="{% url 'add_entry' %}" class="top-menu"><input type="submit" class="btn btn-danger" value="Add"></a>
+            </div>
+            <!-- Grocery Cards -->
+            <div class="row mt-4">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'cart/base.html' %}
+
+{% block content %}
+
+    <div class="container py-5">
+        <h2>Add New Entry to List</h2>
+    
+
+    <form method="POST" class="item-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-danger">Save</button>
+    </form>
+
+    </div>
+
+{% endblock %}
